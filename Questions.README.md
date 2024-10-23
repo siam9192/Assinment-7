@@ -24,3 +24,34 @@ Ans:Specify the table Identify the table containing the data i want to modify.Se
 8.What is the significance of the JOIN operation, and how does it work in PostgreSQL?
 Ans:The JOIN operation in PostgreSQL combines rows from two or more tables based on related columns, allowing retrieval of related data. The most common types are INNER JOIN, which returns only matching rows; LEFT JOIN, which returns all rows from the left table and matched rows from the right; and RIGHT JOIN, which does the opposite. Joins help maintain data normalization and enable complex queries across multiple tables.
 
+9.Explain the GROUP BY clause and its role in aggregation operations.
+Ans: The GROUP BY clause in SQL organizes rows with the same values in specified columns into groups, allowing for aggregation operations like SUM(), COUNT(), etc. It enables calculations on each group, such as total sales per region
+
+10.How can you calculate aggregate functions like COUNT, SUM, and AVG in PostgreSQL?
+Ans:
+* COUNT
+
+SELECT COUNT(*) AS TotalRows
+FROM table_name;  
+
+SELECT COUNT(column_name) AS NonNullCount
+FROM table_name
+WHERE condition;  -- Counts non-null values in a specific column based on a condition
+* SUM
+
+SELECT SUM(column_name) AS TotalAmount
+FROM table_name
+WHERE condition; 
+
+* AVG
+
+SELECT AVG(column_name) AS AverageValue
+FROM table_name
+WHERE condition;  
+
+11.what is the purpose of an index in PostgreSQL, and how does it optimize query performance?
+Ans:Indexes in PostgreSQL enhance query performance by speeding up data retrieval and reducing I/O operations. They improve filtering, sorting, and joins but can slow down write operations and consume extra  space.
+
+12.Explain the concept of a PostgreSQL view and how it differs from a table ?
+Ans:A PostgreSQL view is like a virtual table that shows data from one or more real tables without storing it. It helps simplify complex queries and can restrict access to certain data, but it can be slower to use since it generates results on the fly.
+
